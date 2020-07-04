@@ -162,7 +162,6 @@ uint8_t COMMAND_DOWNLOAD(void) {
 		}
 
 		/* Program flash memory */
-		HAL_UART_Transmit(&huart1, (uint8_t*)"FLASH Erase OK\r\n", strlen("FLASH Erase OK\r\n"), 10);
 		return COMMAND_ProgramFlashMemory();
 	}
 	return DOWNLOAD_OK;
@@ -210,14 +209,14 @@ uint8_t COMMAND_ProgramFlashMemory(void) {
 
 		/* Program flash memory */
 		if (FLASH_If_Write(LastPGAddress, (uint32_t*) RAMBuf, read_size / 4) != FLASHIF_OK) {
-			HAL_UART_Transmit(&huart1, (uint8_t*)"Download failed\r\n", strlen("Download failed\r\n"), 10);
+			//HAL_UART_Transmit(&huart1, (uint8_t*)"Download failed\r\n", strlen("Download failed\r\n"), 10);
 			return DOWNLOAD_WRITE_FAIL;
 		}
 
 		/* Update last programmed address value */
 		LastPGAddress = LastPGAddress + tmp_read_size;
 	}
-	HAL_UART_Transmit(&huart1, (uint8_t*)"DOWNLOAD_OK\r\n", strlen("DOWNLOAD_OK\r\n"), 10);
+	//HAL_UART_Transmit(&huart1, (uint8_t*)"DOWNLOAD_OK\r\n", strlen("DOWNLOAD_OK\r\n"), 10);
 	return DOWNLOAD_OK;
 }
 

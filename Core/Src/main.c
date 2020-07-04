@@ -140,7 +140,7 @@ int main(void)
   startup();
   
   if(is_update_available()) {
-	  HAL_UART_Transmit(&huart1, (uint8_t*)"UPDATE AVAIABLE\r\n", strlen("UPDATE AVAIABLE\r\n"), 10);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)"UPDATE AVAIABLE\r\n", strlen("UPDATE AVAIABLE\r\n"), 10);
 	  LCD_Puts(0, 1, "UPDATE Available ...");
 	  FLASH_If_Init();
 	      /* Test if any sector of Flash memory where user application will be loaded is write protected */

@@ -133,17 +133,17 @@ int main(void)
   
   if(is_update_available()) {
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)"UPDATE AVAIABLE\r\n", strlen("UPDATE AVAIABLE\r\n"), 10);
-	  LCD_Puts(0, 1, "UPDATE Available ...");
+	  LCD_Puts(0, 2, "UPDATE Available ...");
 	  FLASH_If_Init();
 	      /* Test if any sector of Flash memory where user application will be loaded is write protected */
 	  FlashProtection = FLASH_If_GetWriteProtectionStatus();
 	  if(Download_to_flash() == DOWNLOAD_OK) {
 		  card_unlink();
-		  LCD_Puts(0, 1, "    DOWNLOAD OK !   ");
+		  LCD_Puts(0, 2, "    DOWNLOAD OK !   ");
 		  //HAL_FLASH_OB_Launch(); 
 	  } 
 	  else
-		LCD_Puts(0, 1, "  DOWNLOAD FAILED ! ");
+		LCD_Puts(0, 2, "  DOWNLOAD FAILED ! ");
 
 	  
   }
@@ -336,8 +336,6 @@ void Run_application(void) {
   /* Test if user code is programmed starting from address "APPLICATION_ADDRESS" */
   if (((*(__IO uint32_t*)APPLICATION_ADDRESS) & 0x2FFE0000 ) == 0x20000000)
   {
-
-	
 	    __disable_irq();
     memcpy((void*)0x20000000, (const void*)APPLICATION_ADDRESS, 0xc0 );
    

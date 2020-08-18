@@ -43,7 +43,6 @@
 #include "command.h"
 
 //#include "memory_card.h"
-extern UART_HandleTypeDef huart1;
 
 FATFS fatfs;
 FIL fil;

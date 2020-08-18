@@ -52,7 +52,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-extern UART_HandleTypeDef huart1;
+//extern UART_HandleTypeDef huart1;
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -141,7 +141,7 @@ uint32_t FLASH_If_Write(uint32_t destination, uint32_t *p_source, uint32_t lengt
       if (*(uint32_t*)destination != *(uint32_t*)(p_source + i))
       {
         /* Flash content doesn't match SRAM content */
-		HAL_UART_Transmit(&huart1, (uint8_t*)"INVALID DATA!!!\r\n", strlen("INVALID DATA!!!\r\n"), 10);
+//		HAL_UART_Transmit(&huart1, (uint8_t*)"INVALID DATA!!!\r\n", strlen("INVALID DATA!!!\r\n"), 10);
         return(FLASHIF_WRITINGCTRL_ERROR);
       }
       /* Increment FLASH destination address */

@@ -336,12 +336,12 @@ void Run_application(void) {
   /* Test if user code is programmed starting from address "APPLICATION_ADDRESS" */
   if (((*(__IO uint32_t*)APPLICATION_ADDRESS) & 0x2FFE0000 ) == 0x20000000)
   {
-	    __disable_irq();
-    memcpy((void*)0x20000000, (const void*)APPLICATION_ADDRESS, 0xc0 );
-   
-	__HAL_SYSCFG_REMAPMEMORY_SRAM();
-    __enable_irq();
-	__DSB();
+//	    __disable_irq();
+//    memcpy((void*)0x20000000, (const void*)APPLICATION_ADDRESS, 0xc0 );
+//   
+//	__HAL_SYSCFG_REMAPMEMORY_SRAM();
+//    __enable_irq();
+//	__DSB();
 	  
     /* Jump to user application */
     JumpAddress = *(__IO uint32_t*) (APPLICATION_ADDRESS + 4);
@@ -354,6 +354,8 @@ void Run_application(void) {
     JumpToApplication();
   }
 }
+
+
 
 
 /* USER CODE END 4 */

@@ -67,6 +67,8 @@ void Error_Handler(void);
 
 #define LCD_EN_Pin GPIO_PIN_15
 #define LCD_EN_GPIO_Port GPIOA
+#define LCD_RW_Pin GPIO_PIN_14
+#define LCD_RW_GPIO_Port GPIOA
 #define LCD_RS_Pin GPIO_PIN_3
 #define LCD_RS_GPIO_Port GPIOB
 #define LCD_D4_Pin GPIO_PIN_4

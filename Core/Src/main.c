@@ -143,7 +143,7 @@ int main(void)
 		  //HAL_FLASH_OB_Launch(); 
 	  } 
 	  else
-		LCD_Puts(0, 2, "  DOWNLOAD FAILED ! ");
+			LCD_Puts(0, 2, "  DOWNLOAD FAILED ! ");
 
 	  
   }

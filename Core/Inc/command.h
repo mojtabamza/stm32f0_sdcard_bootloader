@@ -47,7 +47,6 @@ extern "C"
   /* Includes ------------------------------------------------------------------*/
 #include "flash_if.h"
 #include "main.h"
-#include "flash_if.h"
 #include "fatfs.h"
 
 
